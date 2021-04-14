@@ -1,0 +1,53 @@
+set notification-error-bg       "#222222" # bg
+set notification-error-fg       "#ec7279" # bright:red
+set notification-warning-bg     "#222222" # bg
+set notification-warning-fg     "#deb974" # bright:yellow
+set notification-bg             "#222222" # bg
+set notification-fg             "#a0c980" # bright:green
+
+set completion-bg               "#4D5566" # bg2
+set completion-fg               "#B3B1AD" # fg
+set completion-group-bg         "#3c3836" # bg1
+set completion-group-fg         "#88909f" # gray
+set completion-highlight-bg     "#6cb6eb" # bright:blue
+set completion-highlight-fg     "#4D5566" # bg2
+
+# Define the color in index mode
+set index-bg                    "#4D5566" # bg2
+set index-fg                    "#B3B1AD" # fg
+set index-active-bg             "#6cb6eb" # bright:blue
+set index-active-fg             "#31363b" # bg2
+
+set inputbar-bg                 "#222222" # bg
+set inputbar-fg                 "#B3B1AD" # fg
+
+set statusbar-bg                "#4D5566" # bg2
+set statusbar-fg                "#B3B1AD" # fg
+
+set highlight-color             "#deb974" # bright:yellow
+set highlight-active-color      "#fe8019" # bright:orange
+
+set default-bg                  "#222222" # bg
+set default-fg                  "#B3B1AD" # fg
+set render-loading              true
+set render-loading-bg           "#222222" # bg
+set render-loading-fg           "#eaf2f1" # fg
+
+# Recolor book content's color
+set recolor-lightcolor          "#222222" # bg
+set recolor-darkcolor           "#ffffff" # fg
+set recolor                     "true"
+# set recolor-keephue             true      # keep original color
+
+# Startup options
+#
+#
+set adjust-open width
+set recolor true
+
+map <Left> navigate previous
+map <Right> navigate next
+map <C-=> zoom in
+map <C--> zoom out
+map B jumplist backward
+map b jumplist forward

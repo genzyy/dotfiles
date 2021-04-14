@@ -1,0 +1,182 @@
+[colors]
+
+background     = #100E23 
+;background     = #aa1b222d
+foreground     = #1c1e26
+
+[bar/mybar]
+
+bottom = false
+
+fixed-center = true
+
+height = 18
+width = 100%
+;offset-x = 1%
+;offset-y = 5
+padding-right = 1
+padding-left = 1
+border-size = 3
+border-color = ${colors.background}
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+font-0 = JetBrainsMono Nerd Font:style:Bold:pixelsize=10;3
+font-1 = TamzenForPowerline:pixelsize=14;2
+font-2 = Symbols Nerd Font:size=10;2
+font-3 = Source Han Sans JP:Bold:size=11;2 
+
+modules-left = battery pulseaudio wired-network wireless-network title
+modules-right = memory backlight date
+modules-center = bspwm
+;modules-left = bspwm
+;modules-right = battery pulseaudio wireless-network date
+
+tray-position = right
+tray-maxsize = 16
+
+module-margin-left = 0
+module-margin-right = 1
+wm-restack = bspwm
+
+
+[module/bspwm]
+type                      = internal/bspwm
+label-focused             = %name%
+label-focused-padding     = 3
+label-focused-foreground  = #424e65
+label-focused-background  = #87dfeb
+label-occupied            = %name%
+label-occupied-padding    = 3
+label-occupied-foreground = #2ce592
+;label-occupied-background = #aa1b222d
+label-urgent              = %name%
+label-urgent-padding      = 3
+label-urgent-foreground   = #2ce592
+label-empty               = %name%
+label-empty-padding       = 3
+label-empty-foreground    = #d2d4de
+pin-workspaces = true
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+format = <label>
+label =   %percentage%%
+label-background = #62D196
+label-padding = 1
+
+[module/pulseaudio]
+type = internal/alsa
+
+
+format-volume = <label-volume>
+label-muted = ﱝ
+label-volume =  %percentage%%
+interval = 5
+label-volume-background = #ffb378 
+label-muted-background = #ffb378 
+label-muted-padding = 1
+label-volume-padding = 1
+
+[module/battery]
+type = internal/battery
+
+battery = BAT0
+adapter = ADP0
+
+poll-interval = 5
+
+full-at = 99
+
+time-format = %H:%M
+
+label-discharging =  %percentage%% %time%
+label-charging =  %percentage%%
+label-full =  %percentage%%
+label-charging-foreground = #1c1e26
+label-charging-background =  #c792ea	
+label-discharging-foreground = #1c1e26
+label-discharging-background = #c792ea
+label-full-foreground = #1c1e26
+label-full-background = #d3a0bc
+label-charging-padding = 1
+label-full-padding = 1
+label-discharging-padding = 1
+
+format-discharging = <label-discharging>
+format-full = <label-full>
+format-charging = <label-charging>
+
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+format = <label>
+label = ﴮ %percentage%%
+label-background = #fab38e
+label-padding = 1
+
+[module/memory]
+type = internal/memory
+interval = 3
+format = <label>
+label = 﫭 %gb_used%
+label-background = #1da0e2 
+label-padding = 1
+
+[module/date]
+type = internal/date
+label =  %date% %time%
+interval = 1.0
+date = %d-%m-%Y
+time = %H:%M
+date-alt = %A, %d %B %Y
+time-alt = %I:%M:%S
+format = <label>
+label-background = #ffb378
+label-padding = 1
+
+[module/wired-network]
+type = internal/network
+interface = enp2s0
+label-connected =  %essid%
+label-connected-background = #95c4ce
+label-connected-padding = 1
+label-disconnected = 
+label-disconnected-background = #f0719b
+label-disconnected-padding = 1
+
+[module/wireless-network]
+type = internal/network
+interface = wlan1
+label-connected = 直 %essid%
+label-connected-background = #f0719b
+label-connected-padding = 1
+label-disconnected = 
+label-disconnected-background = #e06c75
+label-disconnected-padding = 1
+
+[module/temperature]
+type = internal/temperature
+interval = 0.5
+thermal-zone = 0
+base-temperature = 20
+warn-temperature = 70
+format = <label>
+label =  %temperature-c%
+label-background = #d2d4de
+label-warn-background = #d2d4de
+label-padding = 1
+label-warn-padding = 1
+label-warn = %temperature-c%
+label-warn-foreground = #f00
+
+[module/title]
+type = internal/xwindow
+format = <label>
+format-foreground = #ffffff
+label = %title%
+label-maxlen = 24
+
+; vim: set ft=dosini nomodeline:
